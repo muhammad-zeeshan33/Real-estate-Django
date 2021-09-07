@@ -1,0 +1,3 @@
+username= estadmin
+email= est.admin@gmail.com
+password = estadmin

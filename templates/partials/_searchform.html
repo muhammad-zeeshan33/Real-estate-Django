@@ -1,0 +1,89 @@
+<div class="click-closed"></div>
+<!--/ Form Search Star /-->
+<div class="box-collapse">
+  <div class="title-box-d">
+    <h3 class="title-d">Search Property</h3>
+  </div>
+  <span class="close-box-collapse right-boxed bi bi-x"></span>
+  <div class="box-collapse-wrap form">
+    <form class="form-a" action="{% url 'search' %}" method="GET">
+      <div class="row">
+        <div class="col-md-12 mb-2">
+          <div class="form-group">
+            <label class="pb-2" for="Type">Keyword</label>
+            <input type="text" name="keywords" class="form-control form-control-lg form-control-a" placeholder="Keyword (pool, kitchen etc) ">
+          </div>
+        </div>
+        <div class="col-md-6 mb-2">
+          <div class="form-group mt-3">
+            <label class="pb-2" for="Type">Type</label>
+            <select class="form-control form-select form-control-a" name="type" id="Type">
+              <option disabled selected >Select Type</option>
+              {% for key,value in type_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 mb-2">
+          <div class="form-group mt-3">
+            <label class="pb-2" for="state">State</label>
+            <select class="form-control form-select form-control-a" name="state" id="Type">
+              <option disabled selected >All States</option>
+              {% for key,value in state_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 mb-2">
+          <div class="form-group mt-3">
+            <label class="pb-2" for="bedrooms">Bedrooms</label>
+            <select class="form-control form-select form-control-a" name="bedrooms" id="bedrooms">
+              <option disabled selected>Any</option>
+              {% for key,value in bedroom_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}              
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 mb-2">
+          <div class="form-group mt-3">
+            <label class="pb-2" for="garages">Garages</label>
+            <select class="form-control form-select form-control-a" id="garages" name="garage">
+              <option disabled selected>Any</option>
+              {% for key,value in garage_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}               
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 mb-2">
+          <div class="form-group mt-3">
+            <label class="pb-2" for="bathrooms">Bathrooms</label>
+            <select class="form-control form-select form-control-a" name="bathrooms" id="bathrooms">
+              <option disabled selected>Any</option>
+              {% for key,value in bathroom_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}              
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6 mb-2">
+          <div class="form-group mt-3">
+            <label class="pb-2" for="price">Min Price</label>
+            <select class="form-control form-select form-control-a" id="price" name="price">
+              <option disabled selected>Unlimite</option>
+              {% for key,value in price_choices.items %}
+              <option value="{{ key }}">{{ value }}</option>
+              {% endfor %}              
+            </select>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-b">Search Property</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
